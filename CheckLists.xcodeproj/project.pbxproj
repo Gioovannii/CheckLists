@@ -56,15 +56,23 @@
 		7B4DF248255D36D00068ED15 /* CheckLists */ = {
 			isa = PBXGroup;
 			children = (
-				7B4DF249255D36D00068ED15 /* AppDelegate.swift */,
-				7B4DF24B255D36D00068ED15 /* SceneDelegate.swift */,
+				7B76E654255E9CDE005BD3CF /* Supported Files */,
 				7B4DF24D255D36D00068ED15 /* CheckListViewController.swift */,
 				7B4DF24F255D36D00068ED15 /* Main.storyboard */,
 				7B4DF252255D36D10068ED15 /* Assets.xcassets */,
 				7B4DF254255D36D10068ED15 /* LaunchScreen.storyboard */,
-				7B4DF257255D36D10068ED15 /* Info.plist */,
 			);
 			path = CheckLists;
+			sourceTree = "<group>";
+		};
+		7B76E654255E9CDE005BD3CF /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B4DF249255D36D00068ED15 /* AppDelegate.swift */,
+				7B4DF24B255D36D00068ED15 /* SceneDelegate.swift */,
+				7B4DF257255D36D10068ED15 /* Info.plist */,
+			);
+			path = "Supported Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +296,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
-				INFOPLIST_FILE = CheckLists/Info.plist;
+				INFOPLIST_FILE = "CheckLists/Supported Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
-				INFOPLIST_FILE = CheckLists/Info.plist;
+				INFOPLIST_FILE = "CheckLists/Supported Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
