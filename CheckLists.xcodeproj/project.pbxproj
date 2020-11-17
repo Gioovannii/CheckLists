@@ -57,10 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				7B76E654255E9CDE005BD3CF /* Supported Files */,
-				7B4DF24D255D36D00068ED15 /* CheckListViewController.swift */,
-				7B4DF24F255D36D00068ED15 /* Main.storyboard */,
-				7B4DF252255D36D10068ED15 /* Assets.xcassets */,
-				7B4DF254255D36D10068ED15 /* LaunchScreen.storyboard */,
+				7B843EB22563D38A00109D92 /* Model */,
+				7B843EB12563D36500109D92 /* View */,
+				7B843EB02563D36200109D92 /* Controller */,
 			);
 			path = CheckLists;
 			sourceTree = "<group>";
@@ -68,11 +67,36 @@
 		7B76E654255E9CDE005BD3CF /* Supported Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B4DF252255D36D10068ED15 /* Assets.xcassets */,
 				7B4DF249255D36D00068ED15 /* AppDelegate.swift */,
 				7B4DF24B255D36D00068ED15 /* SceneDelegate.swift */,
 				7B4DF257255D36D10068ED15 /* Info.plist */,
 			);
 			path = "Supported Files";
+			sourceTree = "<group>";
+		};
+		7B843EB02563D36200109D92 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7B4DF24D255D36D00068ED15 /* CheckListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7B843EB12563D36500109D92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7B4DF254255D36D10068ED15 /* LaunchScreen.storyboard */,
+				7B4DF24F255D36D00068ED15 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B843EB22563D38A00109D92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
