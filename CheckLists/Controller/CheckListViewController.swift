@@ -59,11 +59,11 @@ class CheckListViewController: UITableViewController {
             if indexPath.row == 0 {
                 row0checked.toggle()
                 isChecked = row0checked
-               
+                
             } else if indexPath.row == 1 {
                 row1checked.toggle()
                 isChecked = row1checked
-               
+                
             } else if indexPath.row == 2 {
                 row2checked.toggle()
                 isChecked = row2checked
@@ -80,5 +80,27 @@ class CheckListViewController: UITableViewController {
             if isChecked { cell.accessoryType = .checkmark } else { cell.accessoryType = .none }
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func configureCell(for cell: UITableViewCell, at indexPath: IndexPath) {
+        var isChecked = false
+        
+        if indexPath.row == 0 {
+            isChecked = row0checked
+        } else if indexPath.row == 1 {
+            isChecked = row1checked
+        } else if indexPath.row == 2 {
+            isChecked = row2checked
+        } else if indexPath.row == 3 {
+            isChecked = row3checked
+        } else if indexPath.row == 4 {
+            isChecked = row4checked
+        }
+        
+        if isChecked {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
     }
 }
