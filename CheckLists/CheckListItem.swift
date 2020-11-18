@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CheckListItem {
+struct CheckListItem {
     var text = ""
     var checked = false
 }
