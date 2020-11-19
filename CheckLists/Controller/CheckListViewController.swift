@@ -9,6 +9,7 @@ import UIKit
 
 class CheckListViewController: UITableViewController {
 
+    var items = [CheckListItem]()
         var row0item = CheckListItem()
         var row1item = CheckListItem()
         var row2item = CheckListItem()
@@ -19,18 +20,30 @@ class CheckListViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         
-        row0item.text = "Walk the dog"
+        var item1 = CheckListItem()
+        item1.text = "Walk the dog"
+        items.append(item1)
         
-        row1item.text = "Brush my teeth"
-        row1item.checked = true
+        var item2 = CheckListItem()
+        item2.text = "Brush my teeth"
+        item2.checked = true
+        items.append(item2)
         
-        row2item.text = "Learn iOS development"
-        row2item.checked = true
+        var item3 = CheckListItem()
+        item3.text = "Learn iOS development"
+        item3.checked = true
+        items.append(item3)
+
         
-        row3item.text = "Soccer practice"
+        var item4 = CheckListItem()
+        item4.text = "Soccer practice"
+        items.append(item4)
+
         
-        row4item.text = "Eat ice cream"
-        row4item.checked = true
+        var item5 = CheckListItem()
+        item5.text = "Eat ice cream"
+        items.append(item5)
+
     }
     
     // MARK: - Table view Data Source
