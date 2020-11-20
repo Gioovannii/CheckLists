@@ -56,10 +56,9 @@ class CheckListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListItem", for: indexPath)
         
         let item = items[indexPath.row]
-        let label = cell.viewWithTag(1000) as! UILabel
-        label.text = item.text
+        
+        configureText(for: cell, with: item)
         configureCell(for: cell, at: indexPath)
-
         return cell
     }
     
@@ -86,5 +85,10 @@ class CheckListViewController: UITableViewController {
         } else {
             cell.accessoryType = .none
         }
+    }
+    
+    func configureText(for cell: UITableViewCell, with item: CheckListItem) {
+        let label = cell.viewWithTag(1000) as! UILabel
+        label.text = item.text
     }
 }
