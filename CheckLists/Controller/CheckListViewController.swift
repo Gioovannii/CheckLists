@@ -58,7 +58,7 @@ class CheckListViewController: UITableViewController {
         let item = items[indexPath.row]
         
         configureText(for: cell, with: item)
-        configureCell(for: cell, at: indexPath)
+        configureCheckmark(for: cell, at: indexPath)
         return cell
     }
     
@@ -69,14 +69,13 @@ class CheckListViewController: UITableViewController {
         if let cell = tableView.cellForRow(at: indexPath) {
             let item = items[indexPath.row]
             item.checked.toggle()
-            
-            configureCell(for: cell, at: indexPath)
+            configureCheckmark(for: cell, at: indexPath)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
     
-    func configureCell(for cell: UITableViewCell, at indexPath: IndexPath) {
+    func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
         let item = items[indexPath.row]
         
         if item.checked {
