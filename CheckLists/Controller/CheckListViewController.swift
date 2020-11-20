@@ -20,27 +20,27 @@ class CheckListViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         
-        var item1 = CheckListItem()
+        let item1 = CheckListItem()
         item1.text = "Walk the dog"
         items.append(item1)
         
-        var item2 = CheckListItem()
+        let item2 = CheckListItem()
         item2.text = "Brush my teeth"
         item2.checked = true
         items.append(item2)
         
-        var item3 = CheckListItem()
+        let item3 = CheckListItem()
         item3.text = "Learn iOS development"
         item3.checked = true
         items.append(item3)
 
         
-        var item4 = CheckListItem()
+        let item4 = CheckListItem()
         item4.text = "Soccer practice"
         items.append(item4)
 
         
-        var item5 = CheckListItem()
+        let item5 = CheckListItem()
         item5.text = "Eat ice cream"
         items.append(item5)
 
@@ -67,7 +67,7 @@ class CheckListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cell = tableView.cellForRow(at: indexPath) {
-            var item = items[indexPath.row]
+            let item = items[indexPath.row]
             item.checked.toggle()
             
             configureCell(for: cell, at: indexPath)
