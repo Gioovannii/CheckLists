@@ -16,6 +16,8 @@ class CheckListViewController: UITableViewController {
         var row3item = CheckListItem()
         var row4item = CheckListItem()
     
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -45,7 +47,20 @@ class CheckListViewController: UITableViewController {
         items.append(item5)
 
     }
+    // MARK: - Actions
     
+    @IBAction func addItem() {
+        let newRowIndex = items.count
+        
+        let item = CheckListItem()
+        item.text = "I am a new row"
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+    }
+
     // MARK: - Table view Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +76,6 @@ class CheckListViewController: UITableViewController {
         configureCheckmark(for: cell, at: indexPath)
         return cell
     }
-    
     // MARK: - Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
