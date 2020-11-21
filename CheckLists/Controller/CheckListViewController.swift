@@ -54,6 +54,7 @@ class CheckListViewController: UITableViewController {
         
         let item = CheckListItem()
         item.text = "I am a new row"
+        item.checked = true
         items.append(item)
         
         let indexPath = IndexPath(row: newRowIndex, section: 0)
