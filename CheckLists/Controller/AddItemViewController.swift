@@ -7,11 +7,14 @@
 
 import UIKit
 
-class AddItemViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+class AddItemViewController: UITableViewController, UITextFieldDelegate {
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    
+    override func viewDidLoad() { super.viewDidLoad() }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
     }
     
     @IBAction func cancel() {
@@ -19,7 +22,9 @@ class AddItemViewController: UITableViewController {
     }
     
     @IBAction func done() {
+        guard let text = textField.text else { return }
+        print("Contents of the text field: \(text)")
+        
         navigationController?.popViewController(animated: true)
-
     }
 }
