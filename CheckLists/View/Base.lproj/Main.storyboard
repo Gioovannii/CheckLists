@@ -59,7 +59,7 @@
         <!--Add Item-->
         <scene sceneID="BlK-l9-L9K">
             <objects>
-                <tableViewController id="hvD-eK-4lM" sceneMemberID="viewController">
+                <tableViewController id="hvD-eK-4lM" customClass="AddItemViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tak-PV-TFE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,13 +80,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" largeTitleDisplayMode="never" id="jb3-T0-AjI">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iUg-7z-Etf"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="10w-kh-QOT"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iUg-7z-Etf">
+                            <connections>
+                                <action selector="cancel" destination="hvD-eK-4lM" id="KdW-ZY-pSg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="10w-kh-QOT">
+                            <connections>
+                                <action selector="done" destination="hvD-eK-4lM" id="ZHB-Pa-ScL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faY-xO-EOK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="127"/>
+            <point key="canvasLocation" x="1791" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pIM-pa-rpV">
