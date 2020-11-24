@@ -77,6 +77,7 @@ class CheckListViewController: UITableViewController {
         configureCheckmark(for: cell, at: indexPath)
         return cell
     }
+    
     // MARK: - Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
