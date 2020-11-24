@@ -31,6 +31,8 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
     }
     
+    // MARK: - Delegate
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return false }
         let oldText = text
@@ -41,6 +43,11 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         } else {
             doneBarButton.isEnabled = true
         }
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        doneBarButton.isEnabled = false
         return true
     }
 }
