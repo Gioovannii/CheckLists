@@ -14,9 +14,15 @@ protocol AddItemViewControllerDelegate: class {
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
+    // MARK: - properties
+
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
+    weak var delegate: AddItemViewControllerDelegate?
+    
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,14 +33,15 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancel() {
-        navigationController?.popViewController(animated: true)
+        delegate?.addItemViewControllerDidCancel(self)
     }
     
     @IBAction func done() {
         guard let text = textField.text else { return }
-        print("Contents of the text field: \(text)")
+        let item = CheckListItem()
+        item.text = text
         
-        navigationController?.popViewController(animated: true)
+        delegate?.addItemViewController(self, didFinishAdding: item)
     }
     
     // MARK: - Delegate
