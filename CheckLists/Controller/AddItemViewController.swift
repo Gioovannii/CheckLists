@@ -42,6 +42,8 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         item.text = text
         
         delegate?.addItemViewController(self, didFinishAdding: item)
+        // It's a good idea to have a reference to their owner as the first parameter
+        // To distinguish between tableViews
     }
     
     // MARK: - Delegate
