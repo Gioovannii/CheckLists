@@ -7,7 +7,15 @@
 
 import UIKit
 
-class CheckListViewController: UITableViewController {
+class CheckListViewController: UITableViewController, AddItemViewControllerDelegate {
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        <#code#>
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: CheckListItem) {
+        <#code#>
+    }
+    
 
     var items = [CheckListItem]()
         var row0item = CheckListItem()
