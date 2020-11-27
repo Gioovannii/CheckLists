@@ -14,7 +14,7 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
     }
     
     func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: CheckListItem) {
-        <#code#>
+        navigationController?.popViewController(animated: true)
     }
     
 
