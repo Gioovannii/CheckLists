@@ -9,7 +9,8 @@ import UIKit
 
 class CheckListViewController: UITableViewController, AddItemViewControllerDelegate {
     func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
-        <#code#>
+        navigationController?.popViewController(animated: true)
+
     }
     
     func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: CheckListItem) {
