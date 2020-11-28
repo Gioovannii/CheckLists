@@ -73,9 +73,15 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItem" {
-           
+            let controller = segue.destination as! AddItemViewController
+            
         }
     }
+    
+    
+    
+    
+    
     // MARK: - Table view Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
