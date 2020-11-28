@@ -71,6 +71,11 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
         tableView.insertRows(at: indexPaths, with: .automatic)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddItem" {
+           
+        }
+    }
     // MARK: - Table view Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
