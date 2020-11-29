@@ -129,7 +129,7 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
     }
     
     func configureText(for cell: UITableViewCell, with item: CheckListItem) {
-        let label = cell.viewWithTag(1000) as! UILabel
+        guard let label = cell.viewWithTag(1000) as? UILabel else { return }
         label.text = item.text
     }
 }
