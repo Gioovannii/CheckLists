@@ -75,12 +75,9 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
         if segue.identifier == "AddItem" {
             let controller = segue.destination as! AddItemViewController
             
+            controller.delegate = self
         }
     }
-    
-    
-    
-    
     
     // MARK: - Table view Data Source
     
