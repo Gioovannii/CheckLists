@@ -14,6 +14,11 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
     }
     
     func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: CheckListItem) {
+        let newRowIndex = items.count
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        
         navigationController?.popViewController(animated: true)
     }
     
