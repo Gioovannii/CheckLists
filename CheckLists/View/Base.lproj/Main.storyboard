@@ -16,25 +16,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="CheckListItem" id="nyD-q7-4o4">
-                                <rect key="frame" x="0.0" y="28" width="414" height="41"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CheckListItem" id="nyD-q7-4o4">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nyD-q7-4o4" id="vVj-kR-Aeu">
-                                    <rect key="frame" x="0.0" y="0.0" width="370" height="41"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-wp-X7z">
-                                            <rect key="frame" x="10" y="10" width="350" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4O1-fk-lAU">
+                                            <rect key="frame" x="20" y="11" width="74" height="27"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BI3-B0-FXF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="12.5" height="27"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-wp-X7z">
+                                                    <rect key="frame" x="32.5" y="0.0" width="41.5" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="7Ta-wp-X7z" secondAttribute="bottom" constant="10" id="j7X-E6-eIQ"/>
-                                        <constraint firstItem="7Ta-wp-X7z" firstAttribute="top" secondItem="vVj-kR-Aeu" secondAttribute="top" constant="10" id="msM-YI-COb"/>
-                                        <constraint firstItem="7Ta-wp-X7z" firstAttribute="leading" secondItem="vVj-kR-Aeu" secondAttribute="leading" constant="10" id="oJi-T3-zXU"/>
-                                        <constraint firstAttribute="trailing" secondItem="7Ta-wp-X7z" secondAttribute="trailing" constant="10" id="pmb-SR-QqS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="4O1-fk-lAU" secondAttribute="bottom" constant="1" id="CCZ-d7-KIC"/>
+                                        <constraint firstItem="4O1-fk-lAU" firstAttribute="leading" secondItem="vVj-kR-Aeu" secondAttribute="leadingMargin" id="GoD-RD-FfI"/>
+                                        <constraint firstItem="4O1-fk-lAU" firstAttribute="top" secondItem="vVj-kR-Aeu" secondAttribute="topMargin" id="Sqc-Nq-Dmn"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
