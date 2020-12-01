@@ -110,17 +110,17 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
 
     // MARK: - Configure
 
-    func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
-        let item = items[indexPath.row]
-        
-        if item.checked {
-            cell.accessoryType = .checkmark
-            
-        } else {
-            cell.accessoryType = .none
-        }
-    }
-    
+//    func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
+//        let item = items[indexPath.row]
+//
+//        if item.checked {
+//            cell.accessoryType = .checkmark
+//
+//        } else {
+//            cell.accessoryType = .none
+//        }
+//    }
+//
     func configureText(for cell: UITableViewCell, with item: CheckListItem) {
         guard let label = cell.viewWithTag(1000) as? UILabel else { return }
         label.text = item.text
