@@ -59,6 +59,7 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
         
         let item5 = CheckListItem()
         item5.text = "Eat ice cream"
+        item5.checked = true
         items.append(item5)
 
     }
