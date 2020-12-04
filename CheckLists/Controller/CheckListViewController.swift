@@ -23,7 +23,9 @@ class CheckListViewController: UITableViewController, AddItemViewControllerDeleg
         navigationController?.popViewController(animated: true)
     }
     
-
+    func addItemViewController(_ controller: AddItemViewController, didFinishEditing item: CheckListItem) {
+        
+    }
     var items = [CheckListItem]()
         var row0item = CheckListItem()
         var row1item = CheckListItem()
