@@ -45,12 +45,17 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func done() {
         guard let text = textField.text else { return }
-        let item = CheckListItem()
-        item.text = text
         
-        delegate?.addItemViewController(self, didFinishAdding: item)
-        // It's a good idea to have a reference to their owner as the first parameter
-        // To distinguish between tableViews
+        if let item = itemToEdit {
+            item.text = text
+            delegate?.addItemViewController(self, didFinishEditing: item)
+            // It's a good idea to have a reference to their owner as the first parameter
+            // To distinguish between tableViews
+        } else {
+            let item = CheckListItem()
+            item.text = text
+            delegate?.addItemViewController(self, didFinishAdding: item)
+        }
     }
     
     // MARK: - Delegate
