@@ -7,13 +7,13 @@
 
 import UIKit
 
-class CheckListViewController: UITableViewController, ItemsDetailViewControllerDelegate {
-    func addItemViewControllerDidCancel(_ controller: ItemsDetailViewController) {
+class CheckListViewController: UITableViewController, ItemDetailViewControllerDelegate {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
         navigationController?.popViewController(animated: true)
-
+        
     }
     
-    func addItemViewController(_ controller: ItemsDetailViewController, didFinishAdding item: CheckListItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: CheckListItem) {
         let newRowIndex = items.count
         items.append(item)
         
@@ -23,7 +23,7 @@ class CheckListViewController: UITableViewController, ItemsDetailViewControllerD
         navigationController?.popViewController(animated: true)
     }
     
-    func addItemViewController(_ controller: ItemsDetailViewController, didFinishEditing item: CheckListItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: CheckListItem) {
         if let index = items.firstIndex(of: item) {
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) {
@@ -34,14 +34,14 @@ class CheckListViewController: UITableViewController, ItemsDetailViewControllerD
     }
     
     var items = [CheckListItem]()
-        var row0item = CheckListItem()
-        var row1item = CheckListItem()
-        var row2item = CheckListItem()
-        var row3item = CheckListItem()
-        var row4item = CheckListItem()
+    var row0item = CheckListItem()
+    var row1item = CheckListItem()
+    var row2item = CheckListItem()
+    var row3item = CheckListItem()
+    var row4item = CheckListItem()
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -59,29 +59,29 @@ class CheckListViewController: UITableViewController, ItemsDetailViewControllerD
         item3.text = "Learn iOS development"
         item3.checked = true
         items.append(item3)
-
+        
         
         let item4 = CheckListItem()
         item4.text = "Soccer practice"
         items.append(item4)
-
+        
         
         let item5 = CheckListItem()
         item5.text = "Eat ice cream"
         item5.checked = true
         items.append(item5)
-
+        
     }
-
-
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItem" {
             
-            guard let controller = segue.destination as? ItemsDetailViewController else { return }
+            guard let controller = segue.destination as? ItemDetailViewController else { return }
             
             controller.delegate = self
         } else if segue.identifier == "EditItem" {
-            guard let controller = segue.destination as? ItemsDetailViewController else { return }
+            guard let controller = segue.destination as? ItemDetailViewController else { return }
             controller.delegate = self
             
             if let indexPath = tableView.indexPath(for: sender as? UITableViewCell ?? UITableViewCell()) {
@@ -124,9 +124,9 @@ class CheckListViewController: UITableViewController, ItemsDetailViewControllerD
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
-
+    
     // MARK: - Configure
-
+    
     func configureText(for cell: UITableViewCell, with item: CheckListItem) {
         guard let label = cell.viewWithTag(1000) as? UILabel else { return }
         label.text = item.text
@@ -140,5 +140,14 @@ class CheckListViewController: UITableViewController, ItemsDetailViewControllerD
         } else {
             label.text = "  "
         }
+    }
+    
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        documentsDirectory().appendingPathComponent("Checklists.plist")
     }
 }

@@ -7,20 +7,20 @@
 
 import UIKit
 
-protocol AddItemViewControllerDelegate: class {
-    func addItemViewControllerDidCancel(_ controller: ItemsDetailViewController)
-    func addItemViewController(_ controller: ItemsDetailViewController, didFinishAdding item: CheckListItem)
-    func addItemViewController(_ controller: ItemsDetailViewController, didFinishEditing item: CheckListItem)
+protocol ItemDetailViewControllerDelegate: class {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: CheckListItem)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: CheckListItem)
 }
 
-class ItemsDetailViewController: UITableViewController, UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - properties
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
-    weak var delegate: AddItemViewControllerDelegate?
+    weak var delegate: ItemDetailViewControllerDelegate?
     var itemToEdit: CheckListItem?
     
     // MARK: - Life Cycle
@@ -40,7 +40,7 @@ class ItemsDetailViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancel() {
-        delegate?.addItemViewControllerDidCancel(self)
+        delegate?.itemDetailViewControllerDidCancel(self)
     }
     
     @IBAction func done() {
@@ -48,13 +48,13 @@ class ItemsDetailViewController: UITableViewController, UITextFieldDelegate {
         
         if let item = itemToEdit {
             item.text = text
-            delegate?.addItemViewController(self, didFinishEditing: item)
+            delegate?.itemDetailViewController(self, didFinishEditing: item)
             // It's a good idea to have a reference to their owner as the first parameter
             // To distinguish between tableViews
         } else {
             let item = CheckListItem()
             item.text = text
-            delegate?.addItemViewController(self, didFinishAdding: item)
+            delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }
     
