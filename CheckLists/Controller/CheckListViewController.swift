@@ -10,6 +10,7 @@ import UIKit
 class CheckListViewController: UITableViewController, ItemDetailViewControllerDelegate {
     func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
         navigationController?.popViewController(animated: true)
+        
     }
     
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: CheckListItem) {
@@ -20,6 +21,7 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
         navigationController?.popViewController(animated: true)
+        
         saveChecklistItems()
     }
     
@@ -31,6 +33,7 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
             }
         }
         navigationController?.popViewController(animated: true)
+        
         saveChecklistItems()
     }
     
@@ -46,7 +49,29 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        
         loadChecklistItems()
+
+        let item1 = CheckListItem()
+        item1.text = "Birthdays"
+        items.append(item1)
+
+        let item2 = CheckListItem()
+        item2.text = "Groceries"
+        items.append(item2)
+
+        let item3 = CheckListItem()
+        item3.text = "Cool apps"
+        items.append(item3)
+
+
+        let item4 = CheckListItem()
+        item4.text = "To Do"
+        items.append(item4)
+
+
+        print("Document folder is \(documentsDirectory())")
+        print("Data file is \(dataFilePath())")
 
     }
     
@@ -79,7 +104,6 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         
         configureText(for: cell, with: item)
         configureCheckmark(for: cell, with: item)
-        tableView.reloadRows(at: [indexPath], with: .automatic)
         return cell
     }
     
