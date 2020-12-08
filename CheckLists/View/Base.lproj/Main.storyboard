@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="1791" y="127"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Checklists-->
         <scene sceneID="pIM-pa-rpV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bjb-A5-f93" sceneMemberID="viewController">
+                <navigationController title="Checklists" automaticallyAdjustsScrollViewInsets="NO" id="Bjb-A5-f93" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="59F-ls-o6W">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
