@@ -11,6 +11,7 @@ class AllListsViewController: UITableViewController {
     
     // MARK: - Properties
     let cellIdentifier = "ChecklistCell"
+    var list = [Checklist]()
     
     // MARK: - Life Cycle
 
