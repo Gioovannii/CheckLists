@@ -37,13 +37,19 @@ class AllListsViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return lists.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
+        let checklist = lists[indexPath.row]
         guard let textLabel = cell.textLabel else { return UITableViewCell() }
-        textLabel.text = "List \(indexPath.row)"
+        textLabel.text = checklist.name
+        cell.accessoryType = .detailDisclosureButton
+        
+
+//        textLabel.text = "List \(indexPath.row)"
         return cell
     }
     
