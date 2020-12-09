@@ -70,8 +70,8 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         items.append(item4)
 
 
-        print("Document folder is \(documentsDirectory())")
-        print("Data file is \(dataFilePath())")
+//        print("Document folder is \(documentsDirectory())")
+//        print("Data file is \(dataFilePath())")
 
     }
     
