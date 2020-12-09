@@ -53,20 +53,20 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         loadChecklistItems()
 
         let item1 = CheckListItem()
-        item1.text = "Birthdays"
+        item1.text = "Walk my dog"
         items.append(item1)
 
         let item2 = CheckListItem()
-        item2.text = "Groceries"
+        item2.text = "Program an app"
         items.append(item2)
 
         let item3 = CheckListItem()
-        item3.text = "Cool apps"
+        item3.text = "Do some stuff"
         items.append(item3)
 
 
         let item4 = CheckListItem()
-        item4.text = "To Do"
+        item4.text = "Bla bla bla .."
         items.append(item4)
 
 
