@@ -167,7 +167,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Checklists" largeTitleDisplayMode="always" id="L2H-a0-wXY"/>
                     <connections>
-                        <segue destination="Btc-Io-VAi" kind="show" id="rn4-CU-x2P"/>
+                        <segue destination="Btc-Io-VAi" kind="show" identifier="ShowChecklist" id="rn4-CU-x2P"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pII-vk-iIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
