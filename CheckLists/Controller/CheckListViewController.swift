@@ -44,6 +44,8 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
     var row3item = CheckListItem()
     var row4item = CheckListItem()
     
+    var checklist: Checklist?
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
