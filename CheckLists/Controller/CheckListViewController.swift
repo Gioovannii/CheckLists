@@ -70,8 +70,10 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         let item4 = CheckListItem()
         item4.text = "Bla bla bla .."
         items.append(item4)
-
-
+        
+        guard let name = checklist?.name else { return }
+        title = name
+        
 //        print("Document folder is \(documentsDirectory())")
 //        print("Data file is \(dataFilePath())")
 
