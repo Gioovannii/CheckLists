@@ -49,7 +49,6 @@ class AllListsViewController: UITableViewController {
         cell.accessoryType = .detailDisclosureButton
         
 
-//        textLabel.text = "List \(indexPath.row)"
         return cell
     }
     
