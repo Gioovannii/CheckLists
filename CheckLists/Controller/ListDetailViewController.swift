@@ -30,5 +30,13 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
     
     var checklistToEdit: Checklist?
     
-  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let checklist = checklistToEdit {
+            title = "Edit Checklist"
+            textField.text = checklist.name
+            doneBarButton.isEnabled = true
+        }
+    }
 }
