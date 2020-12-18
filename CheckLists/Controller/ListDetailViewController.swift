@@ -45,10 +45,7 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
         textField.becomeFirstResponder()
     }
     
-    
-    @IBAction func cancel() {
-        delegate?.listDetailViewControllerDidCancel(self)
-    }
+    @IBAction func cancel() { delegate?.listDetailViewControllerDidCancel(self) }
     
     @IBAction func done() {
         if let checklist = checklistToEdit {
@@ -59,4 +56,6 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
             delegate?.listDetailViewController(self, didFinishAdding: checklist)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? { return nil }
 }
