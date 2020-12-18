@@ -39,4 +39,9 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
             doneBarButton.isEnabled = true
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
+    }
 }
