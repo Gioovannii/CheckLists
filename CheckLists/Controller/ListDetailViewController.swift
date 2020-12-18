@@ -5,7 +5,7 @@
 //  Created by Giovanni Gaffé on 2020/12/11.
 //
 
-import Foundation
+import UIKit
 
 protocol ListDetailViewControllerDelegate: class {
     func listDetailViewControllerDidCancel(
@@ -22,6 +22,13 @@ protocol ListDetailViewControllerDelegate: class {
       )
 }
 
-final class ListDetailViewController {
+final class ListDetailViewController: UITableViewController, UITextFieldDelegate {
+    @IBOutlet var textField: UITextField!
+    @IBOutlet var doneBarButton: UIBarButtonItem!
     
+    weak var delegate: ListDetailViewControllerDelegate?
+    
+    var checklistToEdit: Checklist?
+    
+  
 }
