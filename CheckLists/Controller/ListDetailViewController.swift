@@ -44,4 +44,10 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
         super.viewWillAppear(animated)
         textField.becomeFirstResponder()
     }
+    
+    
+    @IBAction func cancel() {
+        delegate?.listDetailViewControllerDidCancel(self)
+    }
+    
 }
