@@ -7,14 +7,14 @@
 
 import UIKit
 
-class AllListsViewController: UITableViewController {
+class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate {
     
     // MARK: - Properties
     let cellIdentifier = "ChecklistCell"
     var lists = [Checklist]()
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,8 +31,6 @@ class AllListsViewController: UITableViewController {
         
         list = Checklist(name: "To Do")
         lists.append(list)
-        
-        
     }
     
     
@@ -48,7 +46,6 @@ class AllListsViewController: UITableViewController {
         textLabel.text = checklist.name
         cell.accessoryType = .detailDisclosureButton
         
-
         return cell
     }
     
@@ -61,6 +58,9 @@ class AllListsViewController: UITableViewController {
         if segue.identifier == "ShowChecklist" {
             let controller = segue.destination as? CheckListViewController
             controller?.checklist = sender as? Checklist
+        } else if segue.identifier == "AddChecklist" {
+            let controller = segue.destination as? ListDetailViewController
+            controller?.delegate = self
         }
     }
 }
