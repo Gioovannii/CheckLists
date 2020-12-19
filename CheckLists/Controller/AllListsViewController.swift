@@ -10,7 +10,7 @@ import UIKit
 extension AllListsViewController: ListDetailViewControllerDelegate {
     
     // MARK: - List Detail View Controller Delegates
-
+    
     func listDetailViewControllerDidCancel(_ controller: ListDetailViewController) {
         navigationController?.popViewController(animated: true)
     }
@@ -85,6 +85,14 @@ class AllListsViewController: UITableViewController {
         performSegue(withIdentifier: "ShowChecklist", sender: checklist)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        lists.remove(at: indexPath.row)
+        
+        let indexPaths = [indexPath]
+        
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowChecklist" {
             let controller = segue.destination as? CheckListViewController
@@ -92,6 +100,7 @@ class AllListsViewController: UITableViewController {
         } else if segue.identifier == "AddChecklist" {
             let controller = segue.destination as? ListDetailViewController
             controller?.delegate = self
+            
         }
     }
 }

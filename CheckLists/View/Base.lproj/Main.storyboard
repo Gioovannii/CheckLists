@@ -231,7 +231,11 @@
                                 <action selector="cancel" destination="TSR-9Y-U77" id="qcp-in-gVl"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="dtg-wu-MkH"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="dtg-wu-MkH">
+                            <connections>
+                                <action selector="done" destination="TSR-9Y-U77" id="gok-cb-t5Q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButton" destination="dtg-wu-MkH" id="Wsv-ti-Hlc"/>
@@ -244,7 +248,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TqO-ex-Wcy"/>
+        <segue reference="8te-IG-6Sa"/>
         <segue reference="LRx-6z-Bou"/>
     </inferredMetricsTieBreakers>
     <resources>
