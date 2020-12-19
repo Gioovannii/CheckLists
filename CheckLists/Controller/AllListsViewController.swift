@@ -7,7 +7,22 @@
 
 import UIKit
 
-class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate {
+extension AllListsViewController: ListDetailViewControllerDelegate {
+    func listDetailViewControllerDidCancel(_ controller: ListDetailViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func listDetailViewController(_ controller: ListDetailViewController, didFinishAdding checklist: Checklist) {
+      
+    }
+    
+    func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist) {
+        
+    }
+}
+
+class AllListsViewController: UITableViewController {
+    
     
     // MARK: - Properties
     let cellIdentifier = "ChecklistCell"
