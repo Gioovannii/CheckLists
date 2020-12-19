@@ -8,6 +8,9 @@
 import UIKit
 
 extension AllListsViewController: ListDetailViewControllerDelegate {
+    
+    // MARK: - List Detail View Controller Delegates
+
     func listDetailViewControllerDidCancel(_ controller: ListDetailViewController) {
         navigationController?.popViewController(animated: true)
     }
@@ -24,7 +27,13 @@ extension AllListsViewController: ListDetailViewControllerDelegate {
     }
     
     func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist) {
-        
+        if let index = lists.firstIndex(of: checklist) {
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cell.textLabel?.text = checklist.name
+            }
+        }
+        navigationController?.popViewController(animated: true)
     }
 }
 
