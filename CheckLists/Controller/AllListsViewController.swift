@@ -92,6 +92,11 @@ class AllListsViewController: UITableViewController {
         
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
+
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        guard let controller = storyboard?.instantiateViewController(identifier: "ListDetailViewController") as? ListDetailViewController else { return }
+        controller.delegate = self
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowChecklist" {
