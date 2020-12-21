@@ -48,7 +48,7 @@ class AllListsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         var list = Checklist(name: "Birthdays")

@@ -132,15 +132,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faY-xO-EOK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2354" y="127"/>
+            <point key="canvasLocation" x="2435" y="127"/>
         </scene>
         <!--Navigation controller-->
         <scene sceneID="pIM-pa-rpV">
             <objects>
                 <navigationController title="Checklists" automaticallyAdjustsScrollViewInsets="NO" id="Bjb-A5-f93" userLabel="Navigation controller" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="59F-ls-o6W">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="59F-ls-o6W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -150,7 +150,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoQ-8c-Vgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89.855072463768124" y="126.5625"/>
+            <point key="canvasLocation" x="97" y="127"/>
         </scene>
         <!--All Lists-->
         <scene sceneID="Ayt-tx-GRZ">
@@ -248,7 +248,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8te-IG-6Sa"/>
+        <segue reference="TqO-ex-Wcy"/>
         <segue reference="LRx-6z-Bou"/>
     </inferredMetricsTieBreakers>
     <resources>
