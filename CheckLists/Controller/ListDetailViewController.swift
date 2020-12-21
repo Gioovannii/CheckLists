@@ -8,18 +8,9 @@
 import UIKit
 
 protocol ListDetailViewControllerDelegate: class {
-    func listDetailViewControllerDidCancel(
-        _ controller: ListDetailViewController)
-    
-    func listDetailViewController(
-        _ controller: ListDetailViewController,
-        didFinishAdding checklist: Checklist
-    )
-    
-    func listDetailViewController(
-        _ controller: ListDetailViewController,
-        didFinishEditing checklist: Checklist
-    )
+    func listDetailViewControllerDidCancel(_ controller: ListDetailViewController)
+    func listDetailViewController(_ controller: ListDetailViewController, didFinishAdding checklist: Checklist)
+    func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist)
 }
 
 final class ListDetailViewController: UITableViewController, UITextFieldDelegate {
@@ -30,6 +21,8 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
     
     var checklistToEdit: Checklist?
     
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +38,8 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
         textField.becomeFirstResponder()
     }
     
+    // MARK: - Actions
+
     @IBAction func cancel() { delegate?.listDetailViewControllerDidCancel(self) }
     
     @IBAction func done() {
