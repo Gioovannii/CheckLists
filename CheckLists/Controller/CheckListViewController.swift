@@ -8,7 +8,6 @@
 import UIKit
 
 class CheckListViewController: UITableViewController, ItemDetailViewControllerDelegate {
-    //    var items = [CheckListItem]()
     var checklist: Checklist!
     
     // MARK: - Life Cycle
@@ -17,7 +16,6 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         
-//        loadChecklistItems()
         guard let name = checklist?.name else { return }
         title = name
     }
@@ -38,41 +36,7 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         guard let label = cell.viewWithTag(1000) as? UILabel else { return }
         label.text = item.text
     }
-    
-    //    func documentsDirectory() -> URL {
-    //        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    //        return paths[0]
-    //    }
-    //
-    //    func dataFilePath() -> URL {
-    //        documentsDirectory().appendingPathComponent("Checklists.plist")
-    //    }
-    //
-    //    func saveChecklistItems() {
-    //        let encoder = PropertyListEncoder()
-    //
-    //        do {
-    //            let data = try encoder.encode(checklist.items)
-    //            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
-    //
-    //        } catch {
-    //            print("Error encoding item array: \(error.localizedDescription)")
-    //        }
-    //    }
-    //
-    //    func loadChecklistItems() {
-    //        let path = dataFilePath()
-    //
-    //        if let data = try? Data(contentsOf: path) {
-    //            let decoder = PropertyListDecoder()
-    //            do {
-    //                checklist.items = try decoder.decode([CheckListItem].self, from: data)
-    //            } catch {
-    //                print("Error decoding item array: \(error.localizedDescription)")
-    //            }
-    //        }
-    //    }
- 
+
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -118,7 +82,6 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         }
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        saveChecklistItems()
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -126,7 +89,6 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
-//        saveChecklistItems()
     }
     
     // MARK: - Add Item View Delegates
@@ -144,7 +106,6 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         tableView.insertRows(at: indexPaths, with: .automatic)
         navigationController?.popViewController(animated: true)
         
-//        saveChecklistItems()
     }
     
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: CheckListItem) {
@@ -156,15 +117,5 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         }
         navigationController?.popViewController(animated: true)
         
-//        saveChecklistItems()
     }
-//
-//    var row0item = CheckListItem()
-//    var row1item = CheckListItem()
-//    var row2item = CheckListItem()
-//    var row3item = CheckListItem()
-//    var row4item = CheckListItem()
-
-    
-   
 }
