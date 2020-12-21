@@ -7,40 +7,10 @@
 
 import UIKit
 
-extension AllListsViewController: ListDetailViewControllerDelegate {
-    
-    // MARK: - List Detail View Controller Delegates
-    
-    func listDetailViewControllerDidCancel(_ controller: ListDetailViewController) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func listDetailViewController(_ controller: ListDetailViewController, didFinishAdding checklist: Checklist) {
-        let newRowIndex = lists.count
-        lists.append(checklist)
-        
-        let indexPath = IndexPath(row: newRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-        
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist) {
-        if let index = lists.firstIndex(of: checklist) {
-            let indexPath = IndexPath(row: index, section: 0)
-            if let cell = tableView.cellForRow(at: indexPath) {
-                cell.textLabel?.text = checklist.name
-            }
-        }
-        navigationController?.popViewController(animated: true)
-    }
-}
-
 class AllListsViewController: UITableViewController {
     
-    
     // MARK: - Properties
+    
     let cellIdentifier = "ChecklistCell"
     var lists = [Checklist]()
     
@@ -64,7 +34,20 @@ class AllListsViewController: UITableViewController {
         lists.append(list)
     }
     
-    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowChecklist" {
+            let controller = segue.destination as? CheckListViewController
+            controller?.checklist = sender as? Checklist
+        } else if segue.identifier == "AddChecklist" {
+            let controller = segue.destination as? ListDetailViewController
+            controller?.delegate = self
+        }
+    }
+
+    // MARK: - Table View Data Source
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lists.count
     }
@@ -102,15 +85,34 @@ class AllListsViewController: UITableViewController {
         
         navigationController?.pushViewController(controller, animated: true)
     }
+}
+
+extension AllListsViewController: ListDetailViewControllerDelegate {
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowChecklist" {
-            let controller = segue.destination as? CheckListViewController
-            controller?.checklist = sender as? Checklist
-        } else if segue.identifier == "AddChecklist" {
-            let controller = segue.destination as? ListDetailViewController
-            controller?.delegate = self
-            
+    // MARK: - List Detail View Controller Delegates
+    
+    func listDetailViewControllerDidCancel(_ controller: ListDetailViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func listDetailViewController(_ controller: ListDetailViewController, didFinishAdding checklist: Checklist) {
+        let newRowIndex = lists.count
+        lists.append(checklist)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist) {
+        if let index = lists.firstIndex(of: checklist) {
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cell.textLabel?.text = checklist.name
+            }
         }
+        navigationController?.popViewController(animated: true)
     }
 }
