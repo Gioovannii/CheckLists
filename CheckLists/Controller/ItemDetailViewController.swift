@@ -16,7 +16,7 @@ protocol ItemDetailViewControllerDelegate: class {
 class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - properties
-
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
@@ -24,7 +24,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     var itemToEdit: CheckListItem?
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let itemToEdit = itemToEdit {
