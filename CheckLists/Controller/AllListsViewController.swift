@@ -39,7 +39,7 @@ class AllListsViewController: UITableViewController {
             item.text = "Item for \(list.name)"
             list.items.append(item)
         }
-        
+        // print("Document folder is \(documentsDirectory())") ⌘+Shift+G + past
         loadChecklists()
     }
     
