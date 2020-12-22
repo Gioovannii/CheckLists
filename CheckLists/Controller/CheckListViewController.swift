@@ -36,7 +36,7 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         guard let label = cell.viewWithTag(1000) as? UILabel else { return }
         label.text = item.text
     }
-
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
