@@ -17,6 +17,7 @@
 		7B8504E22569352E008A1621 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8504E12569352E008A1621 /* ItemDetailViewController.swift */; };
 		7B8A94CD2583188C002D47A7 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8A94CC2583188C002D47A7 /* ListDetailViewController.swift */; };
 		7B8D59E225806E40006228A3 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D59E125806E40006228A3 /* Checklist.swift */; };
+		7B8DB60E2591EE69008656E6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DB60D2591EE69008656E6 /* DataModel.swift */; };
 		7BECD5B425654429000E8ED1 /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECD5B325654429000E8ED1 /* CheckListItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		7B8504E12569352E008A1621 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		7B8A94CC2583188C002D47A7 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		7B8D59E125806E40006228A3 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Checklist.swift; path = CheckLists/Checklist.swift; sourceTree = SOURCE_ROOT; };
+		7B8DB60D2591EE69008656E6 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		7BECD5B325654429000E8ED1 /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 		7B843EB22563D38A00109D92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7B8DB60D2591EE69008656E6 /* DataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				7BECD5B425654429000E8ED1 /* CheckListItem.swift in Sources */,
 				7B8D59E225806E40006228A3 /* Checklist.swift in Sources */,
 				7B8A94CD2583188C002D47A7 /* ListDetailViewController.swift in Sources */,
+				7B8DB60E2591EE69008656E6 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
