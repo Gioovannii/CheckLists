@@ -25,5 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {}
 
+    
+    func saveData() {
+        guard let window = window else { return }
+        guard let navigationController = window.rootViewController as? UINavigationController else { return }
+        guard let controller = navigationController.viewControllers[0] as? AllListsViewController else { return }
+        controller.saveChecklists()
+    }
 }
 
