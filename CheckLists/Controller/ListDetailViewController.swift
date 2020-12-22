@@ -22,7 +22,7 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
     var checklistToEdit: Checklist?
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +39,7 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
     }
     
     // MARK: - Actions
-
+    
     @IBAction func cancel() { delegate?.listDetailViewControllerDidCancel(self) }
     
     @IBAction func done() {
@@ -53,7 +53,7 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
     }
     
     // MARK: - TableView Delegate
-
+    
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? { return nil }
     
     
