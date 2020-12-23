@@ -14,6 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
+        guard let window = window else { return }
+        guard let navigationController = window.rootViewController as? UINavigationController else { return }
+        let controller = navigationController.viewControllers[0] as? AllListsViewController
+        controller?.dataModel = dataModel
     }
 
     func sceneDidDisconnect(_ scene: UIScene) { saveData() }
