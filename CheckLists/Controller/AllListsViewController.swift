@@ -26,6 +26,12 @@ class AllListsViewController: UITableViewController {
         //print("Document folder is \(documentsDirectory())")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.delegate = self
+    }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
