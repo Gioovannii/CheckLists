@@ -21,25 +21,7 @@ class AllListsViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-//
-//
-//        var list = Checklist(name: "Birthdays")
-//        dataModel.lists.append(list)
-//
-//        list = Checklist(name: "Groceries")
-//        dataModel.lists.append(list)
-//
-//        list = Checklist(name: "Cool Apps")
-//        dataModel.lists.append(list)
-//
-//        list = Checklist(name: "To Do")
-//        dataModel.lists.append(list)
-//
-//        for list in dataModel.lists {
-//            let item = CheckListItem()
-//            item.text = "Item for \(list.name)"
-//            list.items.append(item)
-//        }
+
         // ⌘+Shift+G+paste
         //print("Document folder is \(documentsDirectory())")
     }
