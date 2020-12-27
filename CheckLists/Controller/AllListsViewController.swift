@@ -110,3 +110,12 @@ extension AllListsViewController: ListDetailViewControllerDelegate {
         navigationController?.popViewController(animated: true)
     }
 }
+
+extension AllListsViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        // Back Button tapped
+        if viewController === self {
+            UserDefaults.standard.set(-1, forKey: "ChecklistIndex")
+        }
+    }
+}
