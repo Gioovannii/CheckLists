@@ -30,6 +30,12 @@ class AllListsViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         navigationController?.delegate = self
+        
+        let index = UserDefaults.standard.integer(forKey: "ChecklistIndex")
+        if index != -1 {
+            let checklist = dataModel.lists[index]
+            performSegue(withIdentifier: "ShowChecklist", sender: checklist)
+        }
     }
     
     // MARK: - Navigation
