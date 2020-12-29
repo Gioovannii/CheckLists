@@ -12,6 +12,7 @@ class DataModel {
     
     init() {
         loadChecklists()
+        registerDefaults()
     }
     
     // MARK: - Data saving
