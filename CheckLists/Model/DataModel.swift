@@ -13,6 +13,9 @@ class DataModel {
         get {
             return UserDefaults.standard.integer(forKey: "ChecklistIndex")
         }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "ChecklistIndex")
+        }
     }
     
     init() {
