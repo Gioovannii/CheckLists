@@ -31,8 +31,10 @@ class AllListsViewController: UITableViewController {
         
         navigationController?.delegate = self
         
-        let index = UserDefaults.standard.integer(forKey: "ChecklistIndex")
-        if index != -1 {
+        let index = dataModel.indexOfSelectedChecklist
+        
+        if index >= 0 && index > dataModel.lists.count {
+//        if index != -1 {
             let checklist = dataModel.lists[index]
             performSegue(withIdentifier: "ShowChecklist", sender: checklist)
         }
