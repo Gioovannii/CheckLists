@@ -9,6 +9,11 @@ import Foundation
 
 class DataModel {
     var lists = [Checklist]()
+    var indexSelectedChecklist: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "ChecklistIndex")
+        }
+    }
     
     init() {
         loadChecklists()
