@@ -29,7 +29,6 @@ class AllListsViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         navigationController?.delegate = self
-        
         let index = dataModel.indexOfSelectedChecklist
         
         if index >= 0 && index > dataModel.lists.count {
