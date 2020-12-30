@@ -38,6 +38,14 @@ class AllListsViewController: UITableViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+
+        // ⌘+Shift+G+paste
+        //print("Document folder is \(documentsDirectory())")
+    }
+
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
