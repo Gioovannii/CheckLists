@@ -52,6 +52,9 @@
 		7B4DF23D255D36D00068ED15 = {
 			isa = PBXGroup;
 			children = (
+				7B76E654255E9CDE005BD3CF /* Supported Files */,
+				7B843EB22563D38A00109D92 /* Model */,
+				7B843EB12563D36500109D92 /* View */,
 				7B4DF248255D36D00068ED15 /* CheckLists */,
 				7B4DF247255D36D00068ED15 /* Products */,
 			);
@@ -68,9 +71,6 @@
 		7B4DF248255D36D00068ED15 /* CheckLists */ = {
 			isa = PBXGroup;
 			children = (
-				7B76E654255E9CDE005BD3CF /* Supported Files */,
-				7B843EB22563D38A00109D92 /* Model */,
-				7B843EB12563D36500109D92 /* View */,
 				7B843EB02563D36200109D92 /* Controller */,
 			);
 			path = CheckLists;
