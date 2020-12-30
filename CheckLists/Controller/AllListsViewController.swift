@@ -17,12 +17,9 @@ class AllListsViewController: UITableViewController {
     
     // MARK: - Life Cycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.tableFooterView = UIView()
-
-        // ⌘+Shift+G+paste
-        //print("Document folder is \(documentsDirectory())")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
