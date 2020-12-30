@@ -20,7 +20,6 @@ class AllListsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
 
         // ⌘+Shift+G+paste
         //print("Document folder is \(documentsDirectory())")
