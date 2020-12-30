@@ -12,7 +12,7 @@ class AllListsViewController: UITableViewController {
     // MARK: - Properties
     
     let cellIdentifier = "ChecklistCell"
-//    var lists = [Checklist]()
+    //    var lists = [Checklist]()
     var dataModel: DataModel!
     
     // MARK: - Life Cycle
@@ -37,13 +37,13 @@ class AllListsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-
+        
         // ⌘+Shift+G+paste
         //print("Document folder is \(documentsDirectory())")
     }
-
+    
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowChecklist" {
             let controller = segue.destination as? CheckListViewController
@@ -53,9 +53,9 @@ class AllListsViewController: UITableViewController {
             controller?.delegate = self
         }
     }
-
+    
     // MARK: - Table View Data Source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataModel.lists.count
     }
