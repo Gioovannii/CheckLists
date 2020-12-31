@@ -80,6 +80,7 @@ class AllListsViewController: UITableViewController {
         if checklist.items.isEmpty { detailTextLabel.text = "No items"
         } else { detailTextLabel.text = count == 0 ? "All Done" : "\(count) Remaining" }
         
+        cell.imageView?.image = UIImage(named: checklist.iconName)
         return cell
     }
     
