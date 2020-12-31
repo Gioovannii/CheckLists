@@ -17,5 +17,8 @@ class IconPickerViewController: UITableViewController {
     let icons = [ "No icon", "Appointments", "Birthdays", "Chores",
     "Drinks", "Folder", "Groceries", "Inbox", "Photos", "Trips"]
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return icons.count
+    }
     
 }
