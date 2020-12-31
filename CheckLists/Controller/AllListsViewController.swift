@@ -77,11 +77,8 @@ class AllListsViewController: UITableViewController {
         let count = checklist.countUncheckedItems()
         guard let detailTextLabel = cell.detailTextLabel else { return UITableViewCell() }
         
-        if checklist.items.isEmpty {
-            detailTextLabel.text = "No items"
-        } else {
-            detailTextLabel.text = count == 0 ? "All Done" : "\(count) Remaining"
-        }
+        if checklist.items.isEmpty { detailTextLabel.text = "No items"
+        } else { detailTextLabel.text = count == 0 ? "All Done" : "\(count) Remaining" }
         
         return cell
     }
