@@ -279,6 +279,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButton" destination="dtg-wu-MkH" id="Wsv-ti-Hlc"/>
+                        <outlet property="iconImage" destination="LQc-al-uXM" id="QoG-7b-FGP"/>
                         <outlet property="textField" destination="6vY-7i-akB" id="Lel-Qq-mMU"/>
                     </connections>
                 </tableViewController>
