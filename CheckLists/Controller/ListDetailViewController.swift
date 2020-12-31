@@ -55,7 +55,9 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
     
     // MARK: - TableView Delegate
     
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? { return nil }
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath.section == 1 ? indexPath : nil
+    }
     
     
     // MARK: - TextField delegate
