@@ -21,6 +21,7 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
     weak var delegate: ListDetailViewControllerDelegate?
     
     var checklistToEdit: Checklist?
+    var iconName = "Folder"
     
     // MARK: - Life Cycle
     
