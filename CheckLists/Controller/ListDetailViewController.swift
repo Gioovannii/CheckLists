@@ -64,8 +64,13 @@ final class ListDetailViewController: UITableViewController {
     
     // MARK: - Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PickIcon" {
+            let controller = segue.destination as? IconPickerViewController
+            controller?.delegate = self
+        }
+    }
 }
-
 
 extension ListDetailViewController: UITextFieldDelegate {
     
