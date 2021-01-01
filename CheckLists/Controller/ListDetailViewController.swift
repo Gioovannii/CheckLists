@@ -13,7 +13,7 @@ protocol ListDetailViewControllerDelegate: class {
     func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist)
 }
 
-final class ListDetailViewController: UITableViewController, UITextFieldDelegate {
+final class ListDetailViewController: UITableViewController {
     @IBOutlet var textField: UITextField!
     @IBOutlet var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var iconImage: UIImageView!
