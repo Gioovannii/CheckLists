@@ -62,6 +62,13 @@ final class ListDetailViewController: UITableViewController {
         return indexPath.section == 1 ? indexPath : nil
     }
     
+    // MARK: - Navigation
+    
+}
+
+
+extension ListDetailViewController: UITextFieldDelegate {
+    
     // MARK: - TextField delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let oldText = textField.text!
