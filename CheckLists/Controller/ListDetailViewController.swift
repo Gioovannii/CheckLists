@@ -76,3 +76,11 @@ final class ListDetailViewController: UITableViewController {
         return true
     }
 }
+
+extension ListDetailViewController: IconPickerViewControllerDelegate {
+    func iconPicker(_ picker: IconPickerViewController, didPick iconName: String) {
+        self.iconName = iconName
+        iconImage.image = UIImage(named: iconName)
+        navigationController?.popViewController(animated: true)
+    }
+}
