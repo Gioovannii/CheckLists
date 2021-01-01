@@ -62,7 +62,6 @@ final class ListDetailViewController: UITableViewController, UITextFieldDelegate
         return indexPath.section == 1 ? indexPath : nil
     }
     
-    
     // MARK: - TextField delegate
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
