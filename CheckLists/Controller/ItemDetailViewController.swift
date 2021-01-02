@@ -52,8 +52,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
             // It's a good idea to have a reference to their owner as the first parameter
             // To distinguish between tableViews
         } else {
-            let item = CheckListItem()
-            item.text = text
+            let item = CheckListItem(text: text)
             delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }
