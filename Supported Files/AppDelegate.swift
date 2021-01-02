@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        center.delegate = self
+        
         let content = UNMutableNotificationContent()
         content.title = "Hello!"
         content.body = "I am a local notification"
