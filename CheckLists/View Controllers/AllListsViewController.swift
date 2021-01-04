@@ -12,10 +12,17 @@ class AllListsViewController: UITableViewController {
     // MARK: - Properties
     
     let cellIdentifier = "ChecklistCell"
-    //    var lists = [Checklist]()
     var dataModel: DataModel!
     
     // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        
+        // ⌘+Shift+G+paste
+        //print("Document folder is \(documentsDirectory())")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,13 +41,7 @@ class AllListsViewController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.tableFooterView = UIView()
-        
-        // ⌘+Shift+G+paste
-        //print("Document folder is \(documentsDirectory())")
-    }
+
     
     // MARK: - Navigation
     
