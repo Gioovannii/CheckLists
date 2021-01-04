@@ -18,7 +18,7 @@
 		7B8A94CD2583188C002D47A7 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8A94CC2583188C002D47A7 /* ListDetailViewController.swift */; };
 		7B8D59E225806E40006228A3 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D59E125806E40006228A3 /* Checklist.swift */; };
 		7B8DB60E2591EE69008656E6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DB60D2591EE69008656E6 /* DataModel.swift */; };
-		7BECD5B425654429000E8ED1 /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECD5B325654429000E8ED1 /* CheckListItem.swift */; };
+		7BECD5B425654429000E8ED1 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BECD5B325654429000E8ED1 /* ChecklistItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,9 @@
 		7B8504E12569352E008A1621 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		7B865531259D72020082FA37 /* IconPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		7B8A94CC2583188C002D47A7 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
-		7B8D59E125806E40006228A3 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Checklist.swift; path = CheckLists/Checklist.swift; sourceTree = SOURCE_ROOT; };
+		7B8D59E125806E40006228A3 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Checklist.swift; path = CheckLists/Model/Checklist.swift; sourceTree = SOURCE_ROOT; };
 		7B8DB60D2591EE69008656E6 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		7BECD5B325654429000E8ED1 /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
+		7BECD5B325654429000E8ED1 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +52,6 @@
 		7B4DF23D255D36D00068ED15 = {
 			isa = PBXGroup;
 			children = (
-				7B76E654255E9CDE005BD3CF /* Supported Files */,
-				7B843EB22563D38A00109D92 /* Model */,
-				7B843EB12563D36500109D92 /* View */,
 				7B4DF248255D36D00068ED15 /* CheckLists */,
 				7B4DF247255D36D00068ED15 /* Products */,
 			);
@@ -71,47 +68,42 @@
 		7B4DF248255D36D00068ED15 /* CheckLists */ = {
 			isa = PBXGroup;
 			children = (
-				7B843EB02563D36200109D92 /* Controller */,
-			);
-			path = CheckLists;
-			sourceTree = "<group>";
-		};
-		7B76E654255E9CDE005BD3CF /* Supported Files */ = {
-			isa = PBXGroup;
-			children = (
-				7B4DF252255D36D10068ED15 /* Assets.xcassets */,
+				7B843EB22563D38A00109D92 /* Model */,
+				7B843EB02563D36200109D92 /* View Controllers */,
+				7B76E654255E9CDE005BD3CF /* Ressources */,
 				7B4DF249255D36D00068ED15 /* AppDelegate.swift */,
 				7B4DF24B255D36D00068ED15 /* SceneDelegate.swift */,
 				7B4DF257255D36D10068ED15 /* Info.plist */,
 			);
-			path = "Supported Files";
+			path = CheckLists;
 			sourceTree = "<group>";
 		};
-		7B843EB02563D36200109D92 /* Controller */ = {
+		7B76E654255E9CDE005BD3CF /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				7B4DF24F255D36D00068ED15 /* Main.storyboard */,
+				7B4DF252255D36D10068ED15 /* Assets.xcassets */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		7B843EB02563D36200109D92 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				7B7D53D6257B3C0200A547B1 /* AllListsViewController.swift */,
 				7B4DF24D255D36D00068ED15 /* CheckListViewController.swift */,
 				7B8A94CC2583188C002D47A7 /* ListDetailViewController.swift */,
 				7B8504E12569352E008A1621 /* ItemDetailViewController.swift */,
-				7BECD5B325654429000E8ED1 /* CheckListItem.swift */,
-				7B8D59E125806E40006228A3 /* Checklist.swift */,
 				7B865531259D72020082FA37 /* IconPickerViewController.swift */,
 			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		7B843EB12563D36500109D92 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7B4DF24F255D36D00068ED15 /* Main.storyboard */,
-			);
-			path = View;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		7B843EB22563D38A00109D92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7B8D59E125806E40006228A3 /* Checklist.swift */,
+				7BECD5B325654429000E8ED1 /* ChecklistItem.swift */,
 				7B8DB60D2591EE69008656E6 /* DataModel.swift */,
 			);
 			path = Model;
@@ -192,7 +184,7 @@
 				7B865532259D72020082FA37 /* IconPickerViewController.swift in Sources */,
 				7B4DF24A255D36D00068ED15 /* AppDelegate.swift in Sources */,
 				7B4DF24C255D36D00068ED15 /* SceneDelegate.swift in Sources */,
-				7BECD5B425654429000E8ED1 /* CheckListItem.swift in Sources */,
+				7BECD5B425654429000E8ED1 /* ChecklistItem.swift in Sources */,
 				7B8D59E225806E40006228A3 /* Checklist.swift in Sources */,
 				7B8A94CD2583188C002D47A7 /* ListDetailViewController.swift in Sources */,
 				7B8DB60E2591EE69008656E6 /* DataModel.swift in Sources */,
@@ -336,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
-				INFOPLIST_FILE = "$(SRCROOT)/Supported Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CheckLists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56PJN96NRT;
-				INFOPLIST_FILE = "$(SRCROOT)/Supported Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CheckLists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
