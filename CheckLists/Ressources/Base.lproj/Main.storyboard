@@ -187,7 +187,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="datePicker" destination="c0D-1v-hse" id="EiL-O5-R0s"/>
                         <outlet property="doneBarButton" destination="10w-kh-QOT" id="f22-zz-w7J"/>
+                        <outlet property="shouldRemindSwitch" destination="JUd-uW-wJP" id="JFt-bg-bZA"/>
                         <outlet property="textField" destination="9SF-2j-7mw" id="Xga-OI-ebd"/>
                     </connections>
                 </tableViewController>

@@ -19,7 +19,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
-    @IBOutlet weak var UISwitch: UISwitch!
+    @IBOutlet weak var shouldRemindSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     
     weak var delegate: ItemDetailViewControllerDelegate?
@@ -29,10 +29,12 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let itemToEdit = itemToEdit {
+        if let item = itemToEdit {
             title = "Edit Item"
-            textField.text = itemToEdit.text
+            textField.text = item.text
             doneBarButton.isEnabled = true
+            shouldRemindSwitch.isOn = item.shouldRemind
+            datePicker.date = item.dueDate
         }
         
     }
