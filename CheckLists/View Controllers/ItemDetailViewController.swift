@@ -9,8 +9,8 @@ import UIKit
 
 protocol ItemDetailViewControllerDelegate: class {
     func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
-    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: CheckListItem)
-    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: CheckListItem)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
 }
 
 class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
@@ -19,9 +19,11 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var UISwitch: UISwitch!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     weak var delegate: ItemDetailViewControllerDelegate?
-    var itemToEdit: CheckListItem?
+    var itemToEdit: ChecklistItem?
     
     // MARK: - Life Cycle
     
@@ -52,7 +54,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
             // It's a good idea to have a reference to their owner as the first parameter
             // To distinguish between tableViews
         } else {
-            let item = CheckListItem(text: text)
+            let item = ChecklistItem()
+            item.text = textField.text!
             delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }
