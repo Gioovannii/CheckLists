@@ -55,6 +55,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
             
             item.shouldRemind = shouldRemindSwitch.isOn
             item.dueDate = datePicker.date
+            item.scheduleNotification()
             
             delegate?.itemDetailViewController(self, didFinishEditing: item)
             // It's a good idea to have a reference to their owner as the first parameter
@@ -66,7 +67,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
             
             item.shouldRemind = shouldRemindSwitch.isOn
             item.dueDate = datePicker.date
-            
+            item.scheduleNotification()
+
             delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }
