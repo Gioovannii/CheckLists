@@ -9,6 +9,7 @@ import Foundation
 
 class DataModel {
     var lists = [Checklist]()
+    
     var indexOfSelectedChecklist: Int {
         get {
             return UserDefaults.standard.integer(forKey: "ChecklistIndex")
@@ -22,6 +23,14 @@ class DataModel {
         loadChecklists()
         registerDefaults()
         handleFirstTime()
+    }
+    
+    
+    class func nextChecklistItemID() -> Int {
+        let userDefaults = UserDefaults.standard
+        let itemId = userDefaults.integer(forKey: "ChecklistItemID")
+        userDefaults.set(itemId + 1, forKey: "ChecklistItemID")
+        return itemId
     }
     
     // MARK: - Data saving
@@ -84,4 +93,5 @@ class DataModel {
             return list1.name.localizedStandardCompare(list2.name) == .orderedAscending
         }
     }
+
 }
