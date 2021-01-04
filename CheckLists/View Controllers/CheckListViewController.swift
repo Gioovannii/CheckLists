@@ -22,7 +22,7 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
     
     // MARK: - Configure
     
-    func configureCheckmark(for cell: UITableViewCell, with item: CheckListItem) {
+    func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         guard let label = cell.viewWithTag(1001) as? UILabel else { return }
         
         if item.checked {
@@ -32,9 +32,10 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         }
     }
     
-    func configureText(for cell: UITableViewCell, with item: CheckListItem) {
+    func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         guard let label = cell.viewWithTag(1000) as? UILabel else { return }
-        label.text = item.text
+//        label.text = item.text
+        label.text = "\(item.itemID): \(item.text)"
     }
     
     // MARK: - Navigation
@@ -97,7 +98,7 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         navigationController?.popViewController(animated: true)
     }
     
-    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: CheckListItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem) {
         let newRowIndex = checklist.items.count
         checklist.items.append(item)
         
@@ -108,7 +109,7 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
         
     }
     
-    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: CheckListItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem) {
         if let index = checklist.items.firstIndex(of: item) {
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) {
