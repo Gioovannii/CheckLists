@@ -36,8 +36,8 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
             shouldRemindSwitch.isOn = item.shouldRemind
             datePicker.date = item.dueDate
         }
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         textField.becomeFirstResponder()
@@ -52,12 +52,21 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
         
         if let item = itemToEdit {
             item.text = text
+            
+            item.shouldRemind = shouldRemindSwitch.isOn
+            item.dueDate = datePicker.date
+            
             delegate?.itemDetailViewController(self, didFinishEditing: item)
             // It's a good idea to have a reference to their owner as the first parameter
             // To distinguish between tableViews
         } else {
             let item = ChecklistItem()
             item.text = textField.text!
+            item.checked = false
+            
+            item.shouldRemind = shouldRemindSwitch.isOn
+            item.dueDate = datePicker.date
+            
             delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }
